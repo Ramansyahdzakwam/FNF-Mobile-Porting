@@ -515,10 +515,10 @@ addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, frame
 
 Add
 ```haxe
-SUtil.checkPermissions();
+SUtil.checkFiles();
 ```
 
-This will check for android storage permisions and the `assets` or `mods` directories
+This will check for the `assets` or `mods` directories
 
 10. On Crash Application Alert
 
