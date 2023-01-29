@@ -54,9 +54,9 @@ class SUtil
 	}
 
 	/**
-	 * A simple function that checks for storage permissions and game files/folders.
+	 * A simple function that checks for game files/folders.
 	 */
-	public static function checkPermissions():Void
+	public static function checkFiles():Void
 	{
 		#if android
 		if (!FileSystem.exists(SUtil.getStorageDirectory() + 'assets') && !FileSystem.exists(SUtil.getStorageDirectory() + 'mods'))
