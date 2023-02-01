@@ -231,13 +231,12 @@ class SUtil
 	{
 		try
 		{
-			final fixedSavePath:String = savePath.replace(copyPath, '') + savePath.replace(savePath.substring(0, savePath.indexOf(':', 0) + 1), '');
-			if (!FileSystem.exists(fixedSavePath) && Assets.exists(copyPath))
+			if (!FileSystem.exists(savePath) && Assets.exists(copyPath))
 			{
-				if (!FileSystem.exists(Path.directory(fixedSavePath)))
-					SUtil.mkDirs(Path.directory(fixedSavePath));
+				if (!FileSystem.exists(Path.directory(savePath)))
+					SUtil.mkDirs(Path.directory(savePath));
 
-				File.saveBytes(fixedSavePath, Assets.getBytes(copyPath));
+				File.saveBytes(savePath, Assets.getBytes(copyPath));
 			}
 		}
 		catch (e:Dynamic)
