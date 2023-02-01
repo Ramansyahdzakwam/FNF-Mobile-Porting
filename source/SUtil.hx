@@ -231,7 +231,7 @@ class SUtil
 	{
 		try
 		{
-			final fixedSavePath:String = savePath.replace(savePath.substring(0, savePath.indexOf(':', 0) + 1), '');
+			final fixedSavePath:String = savePath.replace(copyPath, '') + savePath.replace(savePath.substring(0, savePath.indexOf(':', 0) + 1), '');
 			if (!FileSystem.exists(fixedSavePath) && Assets.exists(copyPath))
 			{
 				if (!FileSystem.exists(Path.directory(fixedSavePath)))
