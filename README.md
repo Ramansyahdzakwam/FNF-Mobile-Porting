@@ -7,7 +7,7 @@ The things im using when i port a mod to android
 ### PC compile instructions For Android:
 
 1. Download
-* [JDK](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) - Download the version `19` of it
+* [JDK](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) - Download the version `11` of it
 * [Android Studio](https://developer.android.com/studio) - I recomend you to download the latest version
 * [NDK](https://developer.android.com/ndk/downloads/older_releases?hl=fi) - Download the version `r21e` (This is the version recomended by Lime)
 
@@ -62,18 +62,17 @@ Then, After the Libraries, or where the packeges are located add
 
 Add
 ```xml
-
 	<!--Always enable Null Object Reference check-->
 	<haxedef name="HXCPP_CHECK_POINTER" />
 	<haxedef name="HXCPP_STACK_LINE" />
-	<haxedef name="HXCPP_STACK_TRACE"/>
+	<haxedef name="HXCPP_STACK_TRACE" />
 
 	<section if="android">
 		<!--Gradle-->
-		<config:android gradle-version="7.6" gradle-plugin="7.3.1" />
+		<config:android gradle-version="7.4.2" gradle-plugin="7.3.1" />
 
-		<!--Audio Recording Fix-->
-		<config:android target-sdk-version="29" if="${lime <= 8.0.0}" />
+		<!--Target SDK-->
+		<config:android target-sdk-version="30" if="${lime <= 8.0.0}" />
 	</section>
 
 	<section if="ios">
