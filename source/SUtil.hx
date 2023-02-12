@@ -155,7 +155,7 @@ class SUtil
 				+ Lib.application.meta.get('file')
 				+ '-'
 				+ Date.now().toString().replace(' ', '-').replace(':', "'")
-				+ '.log',
+				+ '.txt',
 				msg + '\n');
 		}
 		catch (e:Dynamic)
