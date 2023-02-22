@@ -5,6 +5,7 @@ import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxTileFrames;
 import flixel.group.FlxSpriteGroup;
 import flixel.math.FlxPoint;
+import flixel.util.FlxDestroyUtil;
 import mobile.flixel.FlxButton;
 import openfl.utils.Assets;
 
@@ -142,19 +143,19 @@ class FlxVirtualPad extends FlxSpriteGroup
 	{
 		super.destroy();
 
-		buttonLeft = null;
-		buttonUp = null;
-		buttonDown = null;
-		buttonRight = null;
-		buttonA = null;
-		buttonB = null;
-		buttonC = null;
-		buttonD = null;
-		buttonE = null;
-		buttonV = null;
-		buttonX = null;
-		buttonY = null;
-		buttonZ = null;
+		buttonLeft = FlxDestroyUtil.destroy(buttonLeft);
+		buttonUp = FlxDestroyUtil.destroy(buttonUp);
+		buttonDown = FlxDestroyUtil.destroy(buttonDown);
+		buttonRight = FlxDestroyUtil.destroy(buttonRight);
+		buttonA = FlxDestroyUtil.destroy(buttonA);
+		buttonB = FlxDestroyUtil.destroy(buttonB);
+		buttonC = FlxDestroyUtil.destroy(buttonC);
+		buttonD = FlxDestroyUtil.destroy(buttonD);
+		buttonE = FlxDestroyUtil.destroy(buttonE);
+		buttonV = FlxDestroyUtil.destroy(buttonV);
+		buttonX = FlxDestroyUtil.destroy(buttonX);
+		buttonY = FlxDestroyUtil.destroy(buttonY);
+		buttonZ = FlxDestroyUtil.destroy(buttonZ);
 	}
 
 	private function createButton(X:Float, Y:Float, Graphic:String, Color:Int = 0xFFFFFF):FlxButton
