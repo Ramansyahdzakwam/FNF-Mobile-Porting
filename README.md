@@ -434,7 +434,7 @@ addVirtualPad(LEFT_FULL, A_B);
 
 //if you want it to have a camera
 #if mobile
-addVirtualPadCamera();
+addVirtualPadCamera(); // add false into () if isn't the default draw camera...
 #end
 
 //if you want to remove it at some moment use
@@ -449,7 +449,7 @@ addHitbox();
 
 //if you want it to have a camera
 #if mobile
-addHitboxCamera();
+addHitboxCamera(); // add false into () if isn't the default draw camera...
 #end
 
 //if you want to remove it at some moment use
