@@ -67,7 +67,7 @@ class Log
 				#end
 
 				println(message);
-				Application.current.window.alert(message, 'Some shit happened');
+				Application.current.window.alert(message, 'Error!');
 				System.exit(1);
 			}
 			else
