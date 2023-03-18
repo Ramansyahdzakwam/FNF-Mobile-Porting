@@ -7,14 +7,13 @@ import android.widget.Toast;
 import haxe.CallStack;
 import haxe.io.Path;
 import lime.system.System as LimeSystem;
+import lime.utils.Log as LimeLogger;
 import openfl.Lib;
 import openfl.events.UncaughtErrorEvent;
 import openfl.utils.Assets;
 #if sys
 import sys.FileSystem;
 import sys.io.File;
-#else
-import haxe.Log;
 #end
 
 using StringTools;
@@ -126,7 +125,7 @@ class SUtil
 			switch (stackItem)
 			{
 				case CFunction:
-					stack.push('Non-Haxe (C) Function');
+					stack.push('C Function');
 				case Module(m):
 					stack.push('Module ($m)');
 				case FilePos(s, file, line, column):
@@ -163,12 +162,12 @@ class SUtil
 			#if android
 			Toast.makeText("Error!\nClouldn't save the crash dump because:\n" + e, Toast.LENGTH_LONG);
 			#else
-			println("Error!\nClouldn't save the crash dump because:\n" + e);
+			LimeLogger.println("Error!\nClouldn't save the crash dump because:\n" + e);
 			#end
 		}
 		#end
 
-		println(msg);
+		LimeLogger.println(msg);
 		Lib.application.window.alert(msg, 'Error!');
 		LimeSystem.exit(1);
 	}
@@ -222,7 +221,7 @@ class SUtil
 			#if android
 			Toast.makeText("Error!\nClouldn't save the file because:\n" + e, Toast.LENGTH_LONG);
 			#else
-			println("Error!\nClouldn't save the file because:\n" + e);
+			LimeLogger.println("Error!\nClouldn't save the file because:\n" + e);
 			#end
 		}
 	}
@@ -244,18 +243,9 @@ class SUtil
 			#if android
 			Toast.makeText("Error!\nClouldn't copy the file because:\n" + e, Toast.LENGTH_LONG);
 			#else
-			println("Error!\nClouldn't copy the file because:\n" + e);
+			LimeLogger.println("Error!\nClouldn't copy the file because:\n" + e);
 			#end
 		}
 	}
 	#end
-
-	private static function println(msg:String):Void
-	{
-		#if sys
-		Sys.println(msg);
-		#else
-		Log.trace(msg, null); // Pass null to exclude the position.
-		#end
-	}
 }
