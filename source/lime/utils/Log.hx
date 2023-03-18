@@ -93,6 +93,26 @@ class Log
 		}
 	}
 
+	public static function verbose(message:Dynamic, ?info:PosInfos):Void
+	{
+		if (level >= LogLevel.VERBOSE)
+		{
+			println("[" + info.className + "] " + Std.string(message));
+		}
+	}
+
+	public static function warn(message:Dynamic, ?info:PosInfos):Void
+	{
+		if (level >= LogLevel.WARN)
+		{
+			#if js
+			untyped #if haxe4 js.Syntax.code #else __js__ #end ("console").warn("[" + info.className + "] WARNING: " + Std.string(message));
+			#else
+			println("[" + info.className + "] WARNING: " + Std.string(message));
+			#end
+		}
+	}
+
 	public static inline function print(message:Dynamic):Void
 	{
 		#if sys
@@ -117,26 +137,6 @@ class Log
 		#else
 		trace(Std.string(message));
 		#end
-	}
-
-	public static function verbose(message:Dynamic, ?info:PosInfos):Void
-	{
-		if (level >= LogLevel.VERBOSE)
-		{
-			println("[" + info.className + "] " + Std.string(message));
-		}
-	}
-
-	public static function warn(message:Dynamic, ?info:PosInfos):Void
-	{
-		if (level >= LogLevel.WARN)
-		{
-			#if js
-			untyped #if haxe4 js.Syntax.code #else __js__ #end ("console").warn("[" + info.className + "] WARNING: " + Std.string(message));
-			#else
-			println("[" + info.className + "] WARNING: " + Std.string(message));
-			#end
-		}
 	}
 
 	private static function __init__():Void
