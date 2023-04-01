@@ -235,7 +235,10 @@ class SUtil
 				if (!FileSystem.exists(Path.directory(savePath)))
 					SUtil.mkDirs(Path.directory(savePath));
 
-				File.saveBytes(savePath, Assets.getBytes(copyPath));
+				if (Assets.exists(copyPath, TEXT))
+					File.saveContent(savePath, Assets.getText(copyPath));
+				else
+					File.saveBytes(savePath, Assets.getBytes(copyPath));
 			}
 		}
 		catch (e:Dynamic)
