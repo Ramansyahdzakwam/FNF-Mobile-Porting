@@ -7,10 +7,10 @@ import android.widget.Toast;
 import haxe.CallStack;
 import haxe.io.Path;
 import lime.system.System as LimeSystem;
+import lime.utils.Assets as LimeAssets;
 import lime.utils.Log as LimeLogger;
 import openfl.Lib;
 import openfl.events.UncaughtErrorEvent;
-import openfl.utils.Assets;
 #if sys
 import sys.FileSystem;
 import sys.io.File;
@@ -230,15 +230,15 @@ class SUtil
 	{
 		try
 		{
-			if (!FileSystem.exists(savePath) && Assets.exists(copyPath))
+			if (!FileSystem.exists(savePath) && LimeAssets.exists(copyPath))
 			{
 				if (!FileSystem.exists(Path.directory(savePath)))
 					SUtil.mkDirs(Path.directory(savePath));
 
-				if (Assets.exists(copyPath, TEXT))
-					File.saveContent(savePath, Assets.getText(copyPath));
+				if (LimeAssets.exists(copyPath, TEXT))
+					File.saveContent(savePath, LimeAssets.getText(copyPath));
 				else
-					File.saveBytes(savePath, Assets.getBytes(copyPath));
+					File.saveBytes(savePath, LimeAssets.getBytes(copyPath));
 			}
 		}
 		catch (e:Dynamic)
