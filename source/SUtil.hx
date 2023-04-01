@@ -235,10 +235,7 @@ class SUtil
 				if (!FileSystem.exists(Path.directory(savePath)))
 					SUtil.mkDirs(Path.directory(savePath));
 
-				if (LimeAssets.exists(copyPath, TEXT))
-					File.saveContent(savePath, LimeAssets.getText(copyPath));
-				else
-					File.saveBytes(savePath, LimeAssets.getBytes(copyPath));
+				File.saveBytes(savePath, LimeAssets.getBytes(copyPath));
 			}
 		}
 		catch (e:Dynamic)
