@@ -22,7 +22,7 @@ Unzip the NDK (the NDK does not need to be installed because its a zip archive)
 
 5. Open project in CMD/PowerShell `cd (path to fnf source)`
 And run command `lime build android -final`
-The apk will be generated in this path (path to source)\export\release\android\bin\app\build\outputs\apk\debug
+The apk will be generated in this path (path to source)`\export\release\android\bin\app\build\outputs\apk\debug`
 _____________________________________
 
 ## Instructions:
@@ -225,7 +225,7 @@ Add
 		}
 	}
 
-	public function removeVirtualControlsInput(Tinputs:Array<FlxActionInput>)
+	public function removeVirtualControlsInput(Tinputs:Array<FlxActionInput>):Void
 	{
 		for (action in this.digitalActions)
 		{
@@ -353,7 +353,7 @@ Add
 	var trackedInputsHitbox:Array<FlxActionInput> = [];
 	var trackedInputsVirtualPad:Array<FlxActionInput> = [];
 
-	public function addVirtualPad(DPad:FlxDPadMode, Action:FlxActionMode, ?visible = true):Void
+	public function addVirtualPad(DPad:FlxDPadMode, Action:FlxActionMode, visible:Bool = true):Void
 	{
 		if (virtualPad != null)
 			removeVirtualPad();
@@ -387,7 +387,7 @@ Add
 			remove(virtualPad);
 	}
 
-	public function addHitbox(?visible = true):Void
+	public function addHitbox(visible:Bool = true):Void
 	{
 		if (hitbox != null)
 			removeHitbox();
@@ -422,7 +422,7 @@ Add
 	}
 	#end
 
-	override function destroy()
+	override function destroy():Void
 	{
 		#if mobile
 		if (trackedInputsHitbox.length > 0)
@@ -555,8 +555,3 @@ if (justTouched)
 	//Your code
 #end
 ```
-
-## Credits:
-* Saw (M.A. JIGSAW) me - Doing the rest of the code, utils, pad buttons and other things
-* luckydog7 - Original code for mobile controls and hitbox graphic shape original code.
-* Goldie - Pad designer.
