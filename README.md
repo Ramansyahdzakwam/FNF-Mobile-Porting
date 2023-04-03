@@ -1,6 +1,6 @@
-# FNF-Android-Porting
+# FNF-Mobile-Porting
 
-The things im using when i port a mod to android
+The things im using when i port a mod to mobile
 
 **This should be used for the FNF 0.2.8 update and engines that have this version of FNF**
 
