@@ -27,7 +27,7 @@ The apk will be generated in this path (path to source)`\export\release\android\
 
 </details>
 
-## Instructions:
+## Instructions
 
 1. You Need to install `extension-androidtools`
 
