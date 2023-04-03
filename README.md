@@ -6,8 +6,8 @@ The things im using when i port a mod to android
 
 <details>
   <summary>Windows Compile Instructions for Android</summary>
+1.
 
-1. Download
 * [JDK](https://www.oracle.com/java/technologies/downloads/#java11) - Download the version `11` of it
 * [Android Studio](https://developer.android.com/studio) - I recomend you to download the latest version
 * [NDK](https://developer.android.com/ndk/downloads/older_releases?hl=fi) - Download the version `r21e` (This is the version recomended by Lime)
