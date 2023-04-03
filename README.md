@@ -374,8 +374,8 @@ Add
 		if (virtualPad != null)
 		{
 			var camControls:FlxCamera = new FlxCamera();
-			FlxG.cameras.add(camControls, DefaultDrawTarget);
 			camControls.bgColor.alpha = 0;
+			FlxG.cameras.add(camControls, DefaultDrawTarget);
 			virtualPad.cameras = [camControls];
 		}
 	}
@@ -408,8 +408,8 @@ Add
 		if (hitbox != null)
 		{
 			var camControls:FlxCamera = new FlxCamera();
-			FlxG.cameras.add(camControls, DefaultDrawTarget);
 			camControls.bgColor.alpha = 0;
+			FlxG.cameras.add(camControls, DefaultDrawTarget);
 			hitbox.cameras = [camControls];
 		}
 	}
@@ -554,6 +554,6 @@ for (touch in FlxG.touches.list)
 		justTouched = true;
 
 if (justTouched)
-	//Your code
+	// Your code
 #end
 ```
