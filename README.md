@@ -4,7 +4,8 @@ The things im using when i port a mod to android
 
 **This should be used for the FNF 0.2.8 update and engines that have this version of FNF**
 
-### PC compile instructions For Android:
+<details>
+  <summary>Windows Compile Instructions for Android</summary>
 
 1. Download
 * [JDK](https://www.oracle.com/java/technologies/downloads/#java11) - Download the version `11` of it
@@ -23,11 +24,12 @@ Unzip the NDK (the NDK does not need to be installed because its a zip archive)
 5. Open project in CMD/PowerShell `cd (path to fnf source)`
 And run command `lime build android -final`
 The apk will be generated in this path (path to source)`\export\release\android\bin\app\build\outputs\apk\debug`
-_____________________________________
+
+</details>
 
 ## Instructions:
 
-1. You Need to install extension-androidtools
+1. You Need to install `extension-androidtools`
 
 To Install it You Need To Open Command prompt/PowerShell And Type
 ```cmd
@@ -36,7 +38,7 @@ haxelib git extension-androidtools https://github.com/jigsaw-4277821/extension-a
 
 2. Download the repository code and paste it in your source code folder
 
-3. You Need to add these things in project.xml
+3. You Need to add these things in `Project.xml`
 
 On This Line
 ```xml
