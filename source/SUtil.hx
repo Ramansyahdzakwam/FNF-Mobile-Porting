@@ -179,12 +179,10 @@ class SUtil
 	public static function mkDirs(directory:String):Void
 	{
 		var total:String = '';
-
 		if (directory.substr(0, 1) == '/')
 			total = '/';
 
 		var parts:Array<String> = directory.split('/');
-
 		if (parts.length > 0 && parts[0].indexOf(':') > -1)
 			parts.shift();
 
