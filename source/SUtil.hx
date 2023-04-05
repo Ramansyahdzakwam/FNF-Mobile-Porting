@@ -159,7 +159,7 @@ class SUtil
 		}
 		catch (e:Dynamic)
 		{
-			#if android
+			#if (android && debug)
 			Toast.makeText("Error!\nClouldn't save the crash dump because:\n" + e, Toast.LENGTH_LONG);
 			#else
 			LimeLogger.println("Error!\nClouldn't save the crash dump because:\n" + e);
@@ -215,7 +215,7 @@ class SUtil
 		}
 		catch (e:Dynamic)
 		{
-			#if android
+			#if (android && debug)
 			Toast.makeText("Error!\nClouldn't save the file because:\n" + e, Toast.LENGTH_LONG);
 			#else
 			LimeLogger.println("Error!\nClouldn't save the file because:\n" + e);
@@ -237,10 +237,10 @@ class SUtil
 		}
 		catch (e:Dynamic)
 		{
-			#if android
-			Toast.makeText("Error!\nClouldn't copy the file because:\n" + e, Toast.LENGTH_LONG);
+			#if (android && debug)
+			Toast.makeText('Error!\nClouldn\'t copy the $copyPath because:\n' + e, Toast.LENGTH_LONG);
 			#else
-			LimeLogger.println("Error!\nClouldn't copy the file because:\n" + e);
+			LimeLogger.println('Error!\nClouldn\'t copy the $copyPath because:\n' + e);
 			#end
 		}
 	}
