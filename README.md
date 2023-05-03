@@ -363,7 +363,7 @@ Add
 	}
 ```
 
-And somehow you finished adding the android controls to your mod now on every state/substate add
+And somehow you finished adding the mobile controls to your mod now on every state/substate add
 ```haxe
 
 //if you want to add the vpad to a state
